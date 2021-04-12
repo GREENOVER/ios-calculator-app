@@ -1,7 +1,8 @@
 # iOS Calculator Application Project
 ### 10진 & 2진 계산기 앱 프로젝트
+[Ground Rule](https://github.com/GREENOVER/ios-calculator-app/blob/main/GroundRule.md)
 ***
-#### What have I done?
+#### What I learned✍️
 - Stack
 - mutating
 - Generic
@@ -10,7 +11,7 @@
 - associatedtype
 - typealias
 
-#### What I learned
+#### What have I done🧑🏻‍💻
 - Stack 자료구조를 학습하고 스택을 활용하여 입력과 계산값을 저장하였다.
   - pop / push / peek
 - 구조체에서 내부 메서드가 구조체 내부에서 데이터를 수정할때 필요한 mutating 키워드를 선언하여 구현하였다.
