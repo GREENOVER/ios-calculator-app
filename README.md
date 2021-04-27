@@ -21,3 +21,14 @@
 - associatedtype을 정의하여 기본 계산기가 타입이 되도록 구현하였다.
 - typealias를 각 10/2진 계산기에서 다르게 선언하여 해당하는 자료형 타입을 주도록 구현하였다.
 - 10진과 2진 계산을 하도록 구현하였다.
+
+#### Trouble Shooting👨‍🔧
+
+
+
+
+
+
+#### Thinking Point🤔
+- 고민점 
+#### Trouble Shooting👨‍🔧
