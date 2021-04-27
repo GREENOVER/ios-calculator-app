@@ -112,5 +112,52 @@
   private var presentOperator: Operator?
   ```
 - 고민점 (4)
-  - 옵"ㅇ
-    private var presentOperator: Operat
+  - "옵셔널 강제 해제 연산자 대신 어떻게 수정할 수 있을까요?"
+  ```swift
+  case .addition:
+    resultNumber = binaryFrontNumber! + binaryBackNumber!
+  case .subtraction:
+    resultNumber = binaryFrontNumber! - binaryBackNumber!
+  case .and:
+    resultNumber = binaryFrontNumber! & binaryBackNumber!
+  ```
+- 원인 및 대책
+  - guard let으로 값이 없다면 오류를 출력하게 하여 안정성을 높임
+  ```swift
+  guard let binaryBackNumber = Int(backNumber, radix: 2) else {
+     print("이진수 오류")
+     return
+  }
+  let frontNumber = String(binaryNumber.pop()!)
+  guard let binaryFrontNumber = Int(frontNumber, radix: 2) else {
+     print("이진수 오류")
+     return
+  }
+  ```
+- 고민점 (5)
+  - "프로토콜을 채택한 부분에서 제너릭으로 이뤄진 메소드에 타입을 일일히 바꿔줄 필요 없이 하려면 어떻게 할 수 있을까요?"
+  ```swift
+  protocol Calculator {
+    func addition<T>() -> T
+    func subtraction<T>() -> T
+    func result<T>() -> T
+  ```
+- 원인 및 대책
+  - typealias와 associatedtype을 이용하여 타입 별칭을 전달하여 간단하게 코드 수정
+  ```swift
+  protocol Calculator {
+    associatedtype CalculatorType
+    
+    func getOperatorButton() -> CalculatorType
+    func result() -> CalculatorType
+    func clear()
+    func stackPush()
+    func verifyPriorityOperator()
+    func operate(_ present: Operator)
+  }
+  ```
+  ```swift
+  class DecimalCalculate: Calculator {
+    typealias CalculatorType = Double
+  ```
+   
