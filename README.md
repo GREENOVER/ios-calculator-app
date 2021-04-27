@@ -91,4 +91,26 @@
     func operate(_ present: Operator)
   }
   ```
-  
+- 고민점 (3)
+  - "프로퍼티들이 외부에 노출되어야 하나요?"
+  ```swift
+      var decimalNumber = Stack<Double>()
+    var operatorSet = Stack<Operator>()
+    var inputNumber: Double?
+    var resultNumber: Double?
+    var inputOperator: Operator?
+    var presentOperator: Operator?
+  ```
+- 원인 및 대책
+  - 각 계산기에 정의된 프로퍼티들은 외부에 노출될 필요가 없음으로 private 접근제어자를 두어 리팩토링
+  ```swift
+  private var decimalNumber = Stack<Double>()
+  private var operatorSet = Stack<Operator>()
+  private var inputNumber: Double?
+  private var resultNumber: Double?
+  private var inputOperator: Operator?
+  private var presentOperator: Operator?
+  ```
+- 고민점 (4)
+  - 옵"ㅇ
+    private var presentOperator: Operat
